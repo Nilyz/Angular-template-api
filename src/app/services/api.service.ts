@@ -16,7 +16,7 @@ export class ApiService {
     const params = {
       latitude: latitude.toString(),
       longitude: longitude.toString(),
-      current_weather: 'true', // Indicamos que queremos el clima actual
+      current_weather: 'true',
     };
 
     return this.http.get<any>(this.weatherApiUrl, { params }).pipe(

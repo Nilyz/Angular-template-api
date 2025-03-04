@@ -12,16 +12,7 @@ export const routes: Routes = [
         redirectTo: '/dashboard',
         pathMatch: 'full',
       },
-      {
-        path: '',
-        redirectTo: '/analytical',
-        pathMatch: 'full',
-      },
-      {
-        path: '',
-        redirectTo: '/prueba',
-        pathMatch: 'full',
-      },
+
       {
         path: 'dashboard',
         loadChildren: () =>

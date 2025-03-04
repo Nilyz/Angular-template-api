@@ -5,26 +5,25 @@ import { CommonModule } from '@angular/common'; // <-- Importar CommonModule
 @Component({
   selector: 'app-prueba-comp',
   standalone: true,
-  imports: [CommonModule], // <-- Añadir aquí
+  imports: [CommonModule], 
   templateUrl: './prueba-comp.component.html',
   styleUrls: ['./prueba-comp.component.scss']
 })
 export class PruebaCompComponent implements OnInit {
-  weatherData: any = null; // Almacenará la información del clima
-  weatherError: string = ''; // Almacenará los mensajes de error
+  weatherData: any = null; 
+  weatherError: string = ''; 
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    // Llamada para obtener el clima, usando coordenadas de ejemplo
-    this.getWeather(40.71, -74.01); // Coordenadas de Nueva York, puedes cambiarlo a cualquier ubicación
+    this.getWeather(40.4168, -3.7038); 
   }
 
   // Método para obtener el clima
   getWeather(lat: number, lon: number): void {
     this.apiService.getWeather(lat, lon).subscribe({
       next: (data) => {
-        this.weatherData = data.current_weather; // Asignar los datos del clima
+        this.weatherData = data.current_weather;
       },
       error: (error) => {
         this.weatherError = 'Error al obtener el clima';
