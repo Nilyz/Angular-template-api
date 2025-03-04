@@ -1,0 +1,13 @@
+<h2>Clima Actual</h2>
+
+<!-- Mostrar el clima si se obtuvo correctamente -->
+<div *ngIf="weatherData" class="weather-card">
+  <h3>Temperatura: {{ weatherData.temperature }}°C</h3>
+  <p>Viento: {{ weatherData.windspeed }} km/h</p>
+  <p>Hora: {{ weatherData.time }}</p>
+</div>
+
+<!-- Mostrar error si la API del clima falla -->
+<div *ngIf="weatherError" class="error">
+  <p>{{ weatherError }}</p>
+</div>
